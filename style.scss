@@ -1,10 +1,17 @@
-$mobile767: 767px;
+@charset "utf-8";
 
-@mixin respond($size) {
-    @media screen and (max-width:$size) {
-        @content;
-    }
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600&family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;600&display=swap');
+
+
+/* 00. Reset */
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+a {color: inherit; text-decoration: inherit;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+button {background: none; border: none;}
+img {vertical-align: middle;}
 
 * {
     margin: 0;
@@ -12,7 +19,6 @@ $mobile767: 767px;
     list-style: none;
     text-decoration: none;
 
-    font-family: 'Inter', 'Pretendard', sans-serif;
     word-break: keep-all;
     position: relative;
     box-sizing: border-box;
@@ -20,7 +26,7 @@ $mobile767: 767px;
 
 html {
     font-size: 16px;
-    font-family: 'Inter', 'Pretendard', sans-serif;
+    font-family: 'Raleway', 'Pretendard', sans-serif;
 }
 
 body {
@@ -28,73 +34,47 @@ body {
     color: #fff;
 }
 
-.intro {
-    padding: 40px;
-    height: 100vh;
-    h1 {
-        span {
-            font-family: "park-lane", serif;
-            font-weight: 300;
-            font-style: italic;
-        }
-        font-size: 102px;
-        font-weight: 400;
-        letter-spacing: -8px;
-        @include respond($mobile767) {
-            font-size: 52px;
-            letter-spacing: -5px;
+a {
+    color: inherit;
+}
+
+header {
+    position: fixed;
+    .inner {
+        padding: 30px 50px 0;
+        .logo {
+            span {
+                font-family: "park-lane", serif;
+                font-weight: normal;
+                font-size: 22px;
+            }
         }
     }
 }
 
-.project {
-    padding: 40px;
-    h4 {
-        font-size: 48px;
-        text-align: center;
-        letter-spacing: -2px;
-        margin-bottom: 80px;
-        @include respond($mobile767) {
-            font-size: 32px;
-        }
-    }
-    .project-list {
+section {
+}
+
+.inner {
+    padding: 0 50px;
+    box-sizing: border-box;
+}
+
+.main {
+    .inner {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 40px 20px;
-        @include respond($mobile767) {
-            grid-template-columns: 1fr;
-        }
-        &-img {
-            display: flex;
-            border-radius: 20px;
-            overflow: hidden;
-            aspect-ratio: 3 / 2;
-            border: 1px solid #1b1b1b;
-            img {
-                width: 100%;
-                object-fit: cover;
-            }
-        }
-        &-txt {
-            margin-top: 30px;
-            .title {
-                font-size: 20px;
-                letter-spacing: -1px;
-                @include respond($mobile767) {
-                    font-size: 16px;
-                }
-            }
-        }
+        height: 100vh;
+        padding: 25px 50px 25px;
     }
-}
-
-.footer {
-    padding: 40px;
-    padding-top: 100px;
-    p {
-        font-size: 12px;
-        text-align: center;
-        letter-spacing: -0.8px;
+    &Text {
+        max-width: fit-content;
+        margin-left: auto;
+        font-size: 90px;
+        letter-spacing: -5px;
+        line-height: 0.9;
+        font-weight: normal;
+        i {
+            display: block;
+        }
     }
 }

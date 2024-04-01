@@ -1,9 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600&family=Noto+Sans+KR&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;600&display=swap");
+/* 00. Reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+address, em, i {
+  font-style: normal;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+img {
+  vertical-align: middle;
+}
+
 * {
   margin: 0;
   padding: 0;
   list-style: none;
   text-decoration: none;
-  font-family: "Inter", "Pretendard", sans-serif;
   word-break: keep-all;
   position: relative;
   box-sizing: border-box;
@@ -11,7 +45,7 @@
 
 html {
   font-size: 16px;
-  font-family: "Inter", "Pretendard", sans-serif;
+  font-family: "Raleway", "Pretendard", sans-serif;
 }
 
 body {
@@ -19,82 +53,41 @@ body {
   color: #fff;
 }
 
-.intro {
-  padding: 40px;
-  height: 100vh;
+a {
+  color: inherit;
 }
-.intro h1 {
-  font-size: 102px;
-  font-weight: 400;
-  letter-spacing: -8px;
+
+header {
+  position: fixed;
 }
-.intro h1 span {
+header .inner {
+  padding: 30px 50px 0;
+}
+header .inner .logo span {
   font-family: "park-lane", serif;
-  font-weight: 300;
-  font-style: italic;
-}
-@media screen and (max-width: 767px) {
-  .intro h1 {
-    font-size: 52px;
-    letter-spacing: -5px;
-  }
+  font-weight: normal;
+  font-size: 22px;
 }
 
-.project {
-  padding: 40px;
+.inner {
+  padding: 0 50px;
+  box-sizing: border-box;
 }
-.project h4 {
-  font-size: 48px;
-  text-align: center;
-  letter-spacing: -2px;
-  margin-bottom: 80px;
-}
-@media screen and (max-width: 767px) {
-  .project h4 {
-    font-size: 32px;
-  }
-}
-.project .project-list {
+
+.main .inner {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px 20px;
+  height: 100vh;
+  padding: 25px 50px 25px;
 }
-@media screen and (max-width: 767px) {
-  .project .project-list {
-    grid-template-columns: 1fr;
-  }
+.mainText {
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  margin-left: auto;
+  font-size: 90px;
+  letter-spacing: -5px;
+  line-height: 0.9;
+  font-weight: normal;
 }
-.project .project-list-img {
-  display: flex;
-  border-radius: 20px;
-  overflow: hidden;
-  aspect-ratio: 3/2;
-  border: 1px solid #1b1b1b;
-}
-.project .project-list-img img {
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.project .project-list-txt {
-  margin-top: 30px;
-}
-.project .project-list-txt .title {
-  font-size: 20px;
-  letter-spacing: -1px;
-}
-@media screen and (max-width: 767px) {
-  .project .project-list-txt .title {
-    font-size: 16px;
-  }
-}
-
-.footer {
-  padding: 40px;
-  padding-top: 100px;
-}
-.footer p {
-  font-size: 12px;
-  text-align: center;
-  letter-spacing: -0.8px;
+.mainText i {
+  display: block;
 }/*# sourceMappingURL=style.css.map */
