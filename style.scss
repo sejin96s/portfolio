@@ -1,21 +1,35 @@
 @charset "utf-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600&family=Noto+Sans+KR&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;600&display=swap');
 
-
-/* 00. Reset */
-* {margin: 0;padding: 0;}
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
-a {color: inherit; text-decoration: inherit;}
-li {list-style: none;}
-address, em, i {font-style: normal;}
-button {background: none; border: none;}
-img {vertical-align: middle;}
-
+/* Reset */
 * {
     margin: 0;
     padding: 0;
+}
+
+a {
+    color: inherit; 
+    text-decoration: inherit;
+}
+
+li {
+    list-style: none;
+}
+
+address, em, i {
+    font-style: normal;
+}
+
+button {
+    background: none; 
+    border: none;
+}
+
+img {
+    vertical-align: middle;
+}
+
+* {
     list-style: none;
     text-decoration: none;
 
@@ -26,11 +40,11 @@ img {vertical-align: middle;}
 
 html {
     font-size: 16px;
-    font-family: 'Raleway', 'Pretendard', sans-serif;
+    font-family: 'Inter', 'Pretendard', sans-serif;
 }
 
 body {
-    background: #000;
+    background: #141212;
     color: #fff;
 }
 
@@ -44,15 +58,37 @@ header {
         padding: 30px 50px 0;
         .logo {
             span {
-                font-family: "park-lane", serif;
-                font-weight: normal;
-                font-size: 22px;
+                font-size: 20px;
+                letter-spacing: -1px;
             }
         }
     }
 }
 
-section {
+.main {
+    margin-bottom: 0;
+    .inner {
+        position: relative;
+        height: 100vh;
+        padding: 25px 50px 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &Text {
+        text-align: center;
+        font-size: 7vw;
+        letter-spacing: -1px;
+        line-height: 0.9;
+        font-weight: normal;
+        span {
+            display: flex;
+            overflow-y: hidden;
+            i {
+                display: block;
+            }
+        }
+    }
 }
 
 .inner {
@@ -60,21 +96,78 @@ section {
     box-sizing: border-box;
 }
 
-.main {
+.contents {
     .inner {
-        display: grid;
-        height: 100vh;
-        padding: 25px 50px 25px;
-    }
-    &Text {
-        max-width: fit-content;
-        margin-left: auto;
-        font-size: 90px;
-        letter-spacing: -5px;
-        line-height: 0.9;
-        font-weight: normal;
-        i {
-            display: block;
+        padding: 100px 50px;
+        &::before {
+            content: "";
+            width: 95%;
+            height: 1px;
+            background: #3b3b3b;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
         }
     }
+    .mainTextBox {
+        .title {
+            text-align: center;
+            overflow: hidden;
+            font-size: 22px;
+        }
+    }
+    .listBox {
+        margin: 100px 0;
+        perspective: 900px;
+        .box {
+            background: #fff;
+            color: #141212;
+            overflow: hidden;
+            border-radius: 10px;
+            position: relative;
+            margin-bottom: 5px;
+            a {
+                display: grid;
+                padding: 50px 80px 50px;
+            }
+            h1 {
+                font-size: 60px;
+                letter-spacing: -5px;
+                line-height: 0.8
+                ;
+            }
+            span {
+                position: absolute;
+                top: 50px;
+                right: 80px;
+                font-size: 12px;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.rotate.on {
+    animation-name: rotate;
+    animation-duration: 1.2s;
+}
+
+@keyframes rotate {
+    0% {
+        transform-origin: 0 0;
+        transform: translate(0px, 100%) rotate(20deg);
+        transition: 1s;
+    }
+    100% {
+        transform-origin: 0 0;
+        transform: translate(0px, 0px) rotate(0deg);
+        transition: 1s;
+    }
+}
+
+footer {
+    padding: 30px 50px;
+    text-align: right;
+    font-size: 10px;
 }
