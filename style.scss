@@ -1,5 +1,15 @@
 @charset "utf-8";
 
+$pc1024: 1024px;
+$mobile767: 767px;
+$mobile480: 480px;
+
+//respond mixin
+@mixin respond($size) {
+    @media screen and (max-width:$size) {
+        @content;
+    }
+}
 
 /* Reset */
 * {
@@ -34,7 +44,6 @@ img {
     text-decoration: none;
 
     word-break: keep-all;
-    position: relative;
     box-sizing: border-box;
 }
 
@@ -50,6 +59,12 @@ body {
 
 a {
     color: inherit;
+}
+
+.wrap {
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
 header {
@@ -98,17 +113,7 @@ header {
 
 .contents {
     .inner {
-        padding: 100px 50px;
-        &::before {
-            content: "";
-            width: 95%;
-            height: 1px;
-            background: #3b3b3b;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            top: 0;
-        }
+        padding: 0px 50px;
     }
     .mainTextBox {
         .title {
@@ -118,8 +123,6 @@ header {
         }
     }
     .listBox {
-        margin: 100px 0;
-        perspective: 900px;
         .box {
             background: #fff;
             color: #141212;
@@ -130,23 +133,59 @@ header {
             a {
                 display: grid;
                 padding: 50px 80px 50px;
+                @include respond($mobile767) {
+                    padding: 30px 40px 30px;
+                }
             }
             h1 {
                 font-size: 60px;
                 letter-spacing: -5px;
-                line-height: 0.8
-                ;
+                @include respond($pc1024) {
+                    font-size: 50px;
+                }
+                @include respond($mobile767) {
+                    font-size: 40px;
+                    letter-spacing: -3px;
+                }
+                @include respond($mobile480) {
+                    font-size: 30px;
+                    letter-spacing: -3px;
+                }
             }
-            span {
-                position: absolute;
-                top: 50px;
-                right: 80px;
-                font-size: 12px;
-                font-weight: bold;
+            ul {
+                margin-top: 20px;
+                display: flex;
+                font-size: 14px;
+                letter-spacing: -0.6px;
+                opacity: 0.7;
+                @include respond($mobile480) {
+                    font-size: 12px;
+                }
+                li {
+                    &:not(:first-child) {
+                        margin-left: 10px;
+                    }
+                }
             }
         }
     }
+    .imgBox {
+        position: absolute;
+        transform: scale(0);
+        opacity: 0;
+        z-index: 100;
+        width: 500px;
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        @include respond($pc1024) {
+            width: 300px;
+        }
+    
+    }
 }
+
 
 .rotate.on {
     animation-name: rotate;

@@ -30,7 +30,6 @@ img {
   list-style: none;
   text-decoration: none;
   word-break: keep-all;
-  position: relative;
   box-sizing: border-box;
 }
 
@@ -46,6 +45,12 @@ body {
 
 a {
   color: inherit;
+}
+
+.wrap {
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 header {
@@ -91,26 +96,12 @@ header .inner .logo span {
 }
 
 .contents .inner {
-  padding: 100px 50px;
-}
-.contents .inner::before {
-  content: "";
-  width: 95%;
-  height: 1px;
-  background: #3b3b3b;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 0;
+  padding: 0px 50px;
 }
 .contents .mainTextBox .title {
   text-align: center;
   overflow: hidden;
   font-size: 22px;
-}
-.contents .listBox {
-  margin: 100px 0;
-  perspective: 900px;
 }
 .contents .listBox .box {
   background: #fff;
@@ -124,17 +115,62 @@ header .inner .logo span {
   display: grid;
   padding: 50px 80px 50px;
 }
+@media screen and (max-width: 767px) {
+  .contents .listBox .box a {
+    padding: 30px 40px 30px;
+  }
+}
 .contents .listBox .box h1 {
   font-size: 60px;
   letter-spacing: -5px;
-  line-height: 0.8;
 }
-.contents .listBox .box span {
+@media screen and (max-width: 1024px) {
+  .contents .listBox .box h1 {
+    font-size: 50px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .contents .listBox .box h1 {
+    font-size: 40px;
+    letter-spacing: -3px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .contents .listBox .box h1 {
+    font-size: 30px;
+    letter-spacing: -3px;
+  }
+}
+.contents .listBox .box ul {
+  margin-top: 20px;
+  display: flex;
+  font-size: 14px;
+  letter-spacing: -0.6px;
+  opacity: 0.7;
+}
+@media screen and (max-width: 480px) {
+  .contents .listBox .box ul {
+    font-size: 12px;
+  }
+}
+.contents .listBox .box ul li:not(:first-child) {
+  margin-left: 10px;
+}
+.contents .imgBox {
   position: absolute;
-  top: 50px;
-  right: 80px;
-  font-size: 12px;
-  font-weight: bold;
+  transform: scale(0);
+  opacity: 0;
+  z-index: 100;
+  width: 500px;
+}
+.contents .imgBox img {
+  width: 100%;
+  border-radius: 10px;
+}
+@media screen and (max-width: 1024px) {
+  .contents .imgBox {
+    width: 300px;
+  }
 }
 
 .rotate.on {
