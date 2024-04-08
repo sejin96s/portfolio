@@ -8,7 +8,7 @@ window.onload = function() {
 
     for( let i = 0; i < listBox.length; i++) {
         listBox[i].addEventListener('mouseover', () => {
-            img.src = `images/img${i}.png`;
+            img.src = `images/img${i}.jpg`;
             gsap.set(imgBox, {scale: 0, opacity: 0, duration: .3}),
             gsap.to(imgBox, {scale:1, opacity: 1, duration: .3})
         })
