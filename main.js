@@ -2,14 +2,6 @@ const hide = (item) => {
     gsap.set(item, {autoAlpha: 0});
 }
 
-gsap.utils.toArray(".fadeIn").forEach(item => {
-    hide(item);
-    gsap.to(item, {
-        autoAlpha:1,
-        duration: 3
-    });
-})
-
 gsap.utils.toArray(".section").forEach((item) => {
     let color = item.getAttribute("data-bgcolor");
 
